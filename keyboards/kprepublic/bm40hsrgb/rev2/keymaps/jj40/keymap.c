@@ -2,11 +2,11 @@
 
 enum layers {
   _MAIN,
+  _QWERTY,
   _SYMBOL,
   _NUMBER,
   _FUNCTION,
   _SHORTCUT,
-  _QWERTY,
 };
 
 #define KEY_1_1 LCTL_T(KC_R)
@@ -22,6 +22,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  KC_J,    KC_G,    KC_M,    KC_P,    KC_V,    KC_COMMA,    KC_DOT,    KC_SLASH,    KC_QUOTE,    KC_EQUAL,    _______,
     KC_ESCAPE, KEY_1_1, KEY_1_2, KEY_1_3, KC_D, KC_B, KC_SEMICOLON, KC_A, KEY_1_8, KEY_1_9, KEY_1_10, _______,
     KC_GRAVE, KC_X,    KC_F,    KC_L,    KC_C,    KC_W,    KC_MINUS,    KC_U,    KC_O, KC_Y,  KC_K, _______,
+    KC_LGUI, KC_PRINT_SCREEN, KC_HOME, LT(_SHORTCUT, KC_BSPC), LT(_NUMBER, KC_T), RGB_TOG,  LT(_SYMBOL, KC_SPC), LT(_FUNCTION, KC_ENT), KC_END, KC_DELETE,   KC_BACKSLASH
+),
+
+[_QWERTY] = LAYOUT_ortho_4x12_1x2uC(
+    _______, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U,  KC_I,  KC_O, KC_P, _______,
+    KC_ESCAPE, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J,  KC_K,  KC_L, KC_SEMICOLON, KC_QUOTE,
+    _______, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M,  KC_COMMA,  KC_DOT, KC_SLASH, _______,
     KC_LGUI, KC_PRINT_SCREEN, KC_HOME, LT(_SHORTCUT, KC_BSPC), LT(_NUMBER, KC_T), RGB_TOG,  LT(_SYMBOL, KC_SPC), LT(_FUNCTION, KC_ENT), KC_END, KC_DELETE,   KC_BACKSLASH
 ),
 
@@ -51,13 +58,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20,  KC_F21,  KC_F22, KC_F23, KC_F24,
     _______, _______, _______, _______, _______, _______, _______, _______,  _______,  _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
-),
-
-[_QWERTY] = LAYOUT_ortho_4x12_1x2uC(
-    _______, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U,  KC_I,  KC_O, KC_P, _______,
-    KC_ESCAPE, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J,  KC_K,  KC_L, KC_SEMICOLON, KC_QUOTE,
-    _______, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M,  KC_COMMA,  KC_DOT, KC_SLASH, _______,
-    KC_LGUI, KC_PRINT_SCREEN, KC_HOME, LT(_SHORTCUT, KC_BSPC), LT(_NUMBER, KC_T), RGB_TOG,  LT(_SYMBOL, KC_SPC), LT(_FUNCTION, KC_ENT), KC_END, KC_DELETE,   KC_BACKSLASH
 ),
 
 };
