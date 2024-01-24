@@ -16,6 +16,8 @@
 | z | J + G |
 | Next virtual window | / + ' |
 | Previous virtual window | G + M |
+| Next Page | U + I |
+| Previous Page | S + C |
 | Bootloader | F20 + F21 + F22 |
 | Cut | R + S |
 | Copy | R + N |
