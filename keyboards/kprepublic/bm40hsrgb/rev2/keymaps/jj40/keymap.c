@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_SHORTCUT] = LAYOUT_ortho_4x12_1x2uC(
-    _______, _______, _______, _______, _______, _______, _______, _______,  _______,  _______, _______, _______,
+    LGUI(KC_LEFT_BRACKET), LCTL(KC_X), LCTL(KC_C), LCTL(KC_V), RCS(KC_V), _______, _______, LCTL(KC_PAGE_UP), LCTL(KC_PAGE_DOWN), LCTL(KC_Z), LCTL(KC_A), LGUI(KC_RIGHT_BRACKET),
     KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20,  KC_F21,  KC_F22, KC_F23, KC_F24,
     _______, _______, _______, _______, _______, _______, _______, _______,  _______,  _______, _______, _______,
     _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
@@ -62,41 +62,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-const uint16_t PROGMEM virtual_window_next[] = {KC_SLASH, KC_QUOTE, COMBO_END};
-const uint16_t PROGMEM virtual_window_prev[] = {KC_G, KC_M, COMBO_END};
-
-const uint16_t PROGMEM page_next[] = {KC_U, KEY_1_9, COMBO_END};
-const uint16_t PROGMEM page_prev[] = {KEY_1_2, KC_C, COMBO_END};
-
-const uint16_t PROGMEM shortcut_cut[] = {KEY_1_1, KEY_1_2, COMBO_END};
-const uint16_t PROGMEM shortcut_copy[] = {KEY_1_1, KEY_1_3, COMBO_END};
-const uint16_t PROGMEM shortcut_paste[] = {KEY_1_1, KC_D, COMBO_END};
-const uint16_t PROGMEM shortcut_paste_plain[] = {KEY_1_1, KEY_1_3, KC_D, COMBO_END};
-
-const uint16_t PROGMEM shortcut_undo[] = {KEY_1_8, KEY_1_10, COMBO_END};
-const uint16_t PROGMEM shortcut_select_all[] = {KC_A, KEY_1_10, COMBO_END};
-
-const uint16_t PROGMEM key_combo_z[] = {KC_J, KC_G, COMBO_END};
-const uint16_t PROGMEM key_combo_q[] = {KC_O, KC_K, COMBO_END};
-
 const uint16_t PROGMEM bootloader[] = {KC_F20, KC_F21, KC_F22, COMBO_END};
 
 const uint16_t PROGMEM layer_to_main[] = {KC_F17, KC_F20, COMBO_END};
 const uint16_t PROGMEM layer_to_qwerty[] = {KC_F13, KC_F14, KC_F23, KC_F24, COMBO_END};
 
 combo_t key_combos[] = {
-    COMBO(virtual_window_prev, LGUI(KC_LEFT_BRACKET)),
-    COMBO(virtual_window_next, LGUI(KC_RIGHT_BRACKET)),
-    COMBO(page_next, LCTL(KC_PAGE_DOWN)),
-    COMBO(page_prev, LCTL(KC_PAGE_UP)),
-    COMBO(shortcut_cut, LCTL(KC_X)),
-    COMBO(shortcut_copy, LCTL(KC_C)),
-    COMBO(shortcut_paste, LCTL(KC_V)),
-    COMBO(shortcut_paste_plain, RCS(KC_V)),
-    COMBO(shortcut_undo, LCTL(KC_Z)),
-    COMBO(shortcut_select_all, LCTL(KC_A)),
-    COMBO(key_combo_z, KC_Z),
-    COMBO(key_combo_q, KC_Q),
     COMBO(bootloader, QK_BOOTLOADER),
     COMBO(layer_to_main, DF(_MAIN)),
     COMBO(layer_to_qwerty, DF(_QWERTY)),
